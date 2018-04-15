@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1443331591 source:c:\users\black\desktop\big_project\console.cpp
+	<stdio.h>
+	<conio.h>
+	"console.h"
+
+1522568840 c:\users\black\desktop\big_project\console.h
+	<windows.h>
+
+1443331591 source:c:\users\black\game\big_project\console.cpp
+	<stdio.h>
+	<conio.h>
+	"console.h"
+
+1522809477 c:\users\black\game\big_project\console.h
+	<windows.h>
+
+1522806081 source:c:\users\black\game\big_project\main.cpp
+	<iostream>
+	"console.h"
+	<cstdlib>
+	<ctime>
+
+1522765958 source:c:\users\huypv12\downloads\game-1d8f2df77ab72622a5d824467c34128c25ba9d2a\game-1d8f2df77ab72622a5d824467c34128c25ba9d2a\big_project\console.cpp
+	<stdio.h>
+	<conio.h>
+	"console.h"
+
+1522765958 c:\users\huypv12\downloads\game-1d8f2df77ab72622a5d824467c34128c25ba9d2a\game-1d8f2df77ab72622a5d824467c34128c25ba9d2a\big_project\console.h
+	<windows.h>
+
+1523811917 source:c:\users\huypv12\downloads\game-1d8f2df77ab72622a5d824467c34128c25ba9d2a\game-1d8f2df77ab72622a5d824467c34128c25ba9d2a\big_project\main.cpp
+	<iostream>
+	"console.h"
+	<cstdlib>
+	<ctime>
+	<conio.h>
+	<windows.h>
+
