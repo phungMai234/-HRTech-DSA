@@ -4,6 +4,7 @@
 #include<ctime>
 #include<conio.h>
 #include<windows.h>
+#include<stdint-gcc.h>
 
 #define LEFT 4
 #define TOP 4
@@ -19,25 +20,25 @@ struct KhoiGach
 {
     int **arr; // la cai j
     int Row, Col;
-    int iBoard, jBoard; // jBoard chỉ hàng, iBoard chỉ cột
+    int iBoard, jBoard; // jBoard chá»‰ hÃ ng, iBoard chá»‰ cá»™t
 };
 KhoiGach *TaoKhoiGach(int ID)
 {
 	KhoiGach *pkhoigach = new KhoiGach;
 	switch(ID)
 	{
-		case 15: // hình chữ I
+		case 15: // hÃ¬nh chá»¯ I
 			pkhoigach->Row=4;
 			pkhoigach->Col = 1;
 			pkhoigach->iBoard=0;
 			pkhoigach->jBoard=5;
 			break;
-		case 31: // hinh vuông
+		case 31: // hinh vuÃ´ng
 			pkhoigach->Row=pkhoigach->Col=2;
 			pkhoigach->iBoard=2;
 			pkhoigach->jBoard=5;
             break;
-		default: // hình T,L,Z
+		default: // hÃ¬nh T,L,Z
 			pkhoigach->Row=2;
 			pkhoigach->Col=3;
 			pkhoigach->iBoard=2;
@@ -202,7 +203,7 @@ void XoayKhoiGach(KhoiGach* pkhoigach) // hoi quan
 	int ** tmpArr;
 	int tmpRow = pkhoigach->Col;
 	int tmpCol = pkhoigach->Row;
-	//Cấp phát bộ nhớ cho ma trận phụ tmpArr.
+	//Cáº¥p phÃ¡t bá»™ nhá»› cho ma tráº­n phá»¥ tmpArr.
 	tmpArr= new int*;
 	for( i = 0; i < tmpRow; i++)
 	{
@@ -214,7 +215,7 @@ void XoayKhoiGach(KhoiGach* pkhoigach) // hoi quan
 		{
 			tmpArr[j][pkhoigach->Row - i - 1] = pkhoigach->arr[i][j];
 		}
-	//Kiểm tra hợp lệ.
+	//Kiá»ƒm tra há»£p lá»‡.
 		for (i=0;i<tmpRow;i++)
 		{
 			for(j=0;j<tmpCol;j++)
@@ -223,7 +224,7 @@ void XoayKhoiGach(KhoiGach* pkhoigach) // hoi quan
 		}
 	for(i=0;i<pkhoigach->Row;i++) delete(pkhoigach->arr[i]);
 	delete(pkhoigach->arr);
-	//Cập nhật thay đổi sau khi xoay.
+	//Cáº­p nháº­t thay Ä‘á»•i sau khi xoay.
 	pkhoigach->Col=tmpCol;
 	pkhoigach->Row=tmpRow;
 	pkhoigach->arr=tmpArr;
@@ -244,7 +245,7 @@ void InitGame(INFO *info)
 {
 	info->level=1;
 	info->score=0;
-	info->speed=0.4;
+	info->speed=0.5;
 }
 
 int CapNhat(INFO *info, int score)
@@ -259,7 +260,7 @@ int CapNhat(INFO *info, int score)
 }
 void VeBangDiem(INFO info)
 {
-	TextColor(10);
+	TextColor(15);
 	gotoXY(LEFT+MaxJ+2,10);
 	cout << "  SCORE: " << info.score;
 	gotoXY(LEFT+MaxJ+2,11);
@@ -294,7 +295,7 @@ void Ve_Next(int ID)
 		{
 			if(pnext->arr[i][j]==1)
 			{
-				TextColor(10);
+				TextColor(15);
 				gotoXY(iRoot+j,jRoot+i);
 				cout << char(2);
 			}
@@ -314,7 +315,7 @@ void Xoa_Next()
 
 				TextColor(0);
 				gotoXY(iRoot+j,jRoot+i);
-				cout << " "; // chú ý in ra dấu cách
+				cout << " "; // chÃº Ã½ in ra dáº¥u cÃ¡ch
 		}
 
 	}
@@ -362,7 +363,7 @@ void CapNhatLaiToaDo(int hang)
 int KiemTra(KhoiGach *pkhoigach,INFO *infogame) //-1 : gameover 0: win
 {
 		int i,j,count;
-		i=pkhoigach->Row-1;
+		i=pkhoigach->Row - 1;
 		if(pkhoigach->iBoard<=3) return -1;//Gameover
 		if(infogame->score>=300) return 0;//Win
 		do
@@ -410,13 +411,48 @@ void DrawBoard()
 		gotoXY(LEFT+10+1,TOP+18+1);TextColor(10);cout << char(219);
 
 }
-
-
-int main() // chay chưa het game đã dừng
+bool help()
 {
+    char choice;
+    cout << "------------------Guide to Play Tetris Game----------------\n"
+            "- Tetris Game is a puzzle with the shapes each consisting -\n"
+            "- of several squares, that are falling down the well.     -\n"
+            "- When playing a tetris game, one turns them or moves left-\n"
+            "- and right, trying to arrange the shapes in a line.      -\n"
+            "- When a line of squares makes a line from edge to edge,  -\n"
+            "- it disappears and all the pieces move down by a square. -\n"
+            "- When the well is filled up, the player lose.            -\n";
+
+    cout << "Do you want to back Main menu? (Y/N) \n";
+
+    choice = _getch();
+    if(choice == 'N' || choice == 'n')
+        return false;
+    return true;
+}
+bool credit()
+{
+    char choice;
+    cout << "--------Credit Game Tetris-------\n"
+            "-- Author: Phung Thi Tuyet Mai --\n"
+            "-- Number: 17020875            --\n"
+            "-- Class : K62IE3              --\n"
+            "---------------------------------\n";
+    cout << "Do you want to back Main menu? (Y/N) \n";
+
+    choice = _getch();
+    if(choice == 'N' || choice == 'n')
+        return false;
+    return true;
+}
+void dieuKhienChinh()
+{
+    clrscr();
     int IDKhoiTiepTheo;
     clock_t Start, End;
     char key;
+
+
     INFO info;
     KhoiGach *currKhoi;
     currKhoi = TaoKhoiGach(Loai());
@@ -454,19 +490,68 @@ int main() // chay chưa het game đã dừng
         if(RoiXuong(currKhoi) == 0)
         {
             GanGiaTri(currKhoi);
+
             int ketqua = KiemTra(currKhoi, &info);
-            if(ketqua == -1  || ketqua == 0)
+            if(ketqua == -1 || ketqua == 0)
                 break;
-            HuyKhoiGach(currKhoi);
+
+            HuyKhoiGach(currKhoi); // giai phong bÃ´j nhá»›
+
             currKhoi = TaoKhoiGach(IDKhoiTiepTheo);
             IDKhoiTiepTheo = Loai();
         }
-        DisplayBoard();
+        DisplayBoard(); // ve khoi Ä‘áº« rÆ¡i cuá»‘ng cuá»‘ibáº£ng
     }while(1);
-    TextColor(10);
+
+    // hiá»‡n chá»¯ end game
+    TextColor(15);
     gotoXY(35,25);
     cout << "End Game.Press anykey to exit.";
-    _getch();
+    _getch(); // cÃ¡i nÃ y Ä‘á»ƒ lÃ m j
+}
+
+int main() /* chay chÆ°a het game Ä‘Ã£ dá»«ng*/
+{
+    char choice;
+
+    do
+    {
+        /*Draw a main menu */
+        cout << "--------------GAME TETRIS-------------" << endl;
+        cout << "**************MAIN MENU**************" << endl;
+        cout << "(1) - New Game" <<  endl;
+        cout << "(2) - Help" << endl;
+        cout << "(3) - Credit" << endl;
+        cout << "(4) - Quit Game" << endl;
+        cout << "--------------------------------------" << endl;
+        /*Get a character from keyvoard*/
+        choice = _getch();
+        /*choose a function to be exercuted*/
+
+        if(choice == '1')
+        {
+            dieuKhienChinh();
+        }
+        if(choice == '2')
+        {
+            clrscr();
+            if(!help())
+                break;
+        }
+        if(choice == '3')
+        {
+            clrscr();
+            if(!credit())
+                break;
+        }
+        if(choice == '4')
+        {
+            break;
+        }
+        clrscr();
+    }while(1);
+
+
     return 0;
 //    int ID = Loai();
 //    KhoiGach* currKhoi;
