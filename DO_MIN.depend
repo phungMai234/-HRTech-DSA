@@ -1,0 +1,146 @@
+# depslib dependency file v1.0
+1523859952 source:c:\users\asus\documents\do_min\main.cpp
+	<iostream>
+	<Windows.h>
+	<conio.h>
+	<time.h>
+	"Struct.h"
+	"draw.h"
+	"menu.h"
+
+1523856655 c:\users\asus\documents\do_min\draw.h
+	<iostream>
+	<windows.h>
+	<vector>
+	<conio.h>
+
+1523856242 source:c:\users\asus\documents\do_min\colordisplay.cpp
+	"ColorDisplay.h"
+	<iostream>
+
+1523856242 c:\users\asus\documents\do_min\colordisplay.h
+	<windows.h>
+	<vector>
+
+1523857691 source:c:\users\asus\documents\do_min\draw.cpp
+	<iostream>
+	<Windows.h>
+	<conio.h>
+	<time.h>
+	"draw.h"
+	"Struct.h"
+
+1523858548 c:\users\asus\documents\do_min\struct.h
+	<windows.h>
+	<vector>
+
+1523857691 source:c:\users\asus\documents\do_min\struct.cpp
+	"Struct.h"
+	<iostream>
+
+1523859952 c:\users\asus\documents\do_min\menu.h
+
+1523860688 source:c:\users\asus\documents\do_min\menu.cpp
+	"menu.h"
+	<iostream>
+	<Windows.h>
+	<conio.h>
+
+1524034482 source:c:\users\asus\desktop\do_min\draw.cpp
+	<iostream>
+	<Windows.h>
+	<conio.h>
+	<time.h>
+	"IDraw.h"
+	"IStruct.h"
+
+1523810688 c:\users\asus\desktop\do_min\draw.h
+	<iostream>
+	<windows.h>
+	<vector>
+	<conio.h>
+
+1523810690 c:\users\asus\desktop\do_min\struct.h
+	<windows.h>
+	<vector>
+
+1524033553 source:c:\users\asus\desktop\do_min\main.cpp
+	<iostream>
+	<Windows.h>
+	<conio.h>
+	<time.h>
+	"IStruct.h"
+	"IDraw.h"
+	"IMenu.h"
+	"IPlaygame.h"
+
+1523810688 c:\users\asus\desktop\do_min\menu.h
+
+1524035464 source:c:\users\asus\desktop\do_min\menu.cpp
+	"IMenu.h"
+	<iostream>
+	<Windows.h>
+
+1524035464 source:c:\users\asus\desktop\do_min\struct.cpp
+	"IStruct.h"
+	<iostream>
+
+1523952297 c:\users\asus\desktop\do_min\imenu.h
+
+1524037200 c:\users\asus\desktop\do_min\istruct.h
+	<windows.h>
+	<vector>
+
+1524035464 c:\users\asus\desktop\do_min\idraw.h
+
+1524035464 c:\users\asus\desktop\do_min\iplaygame.h
+
+1524034362 source:c:\users\asus\desktop\do_min\playgame.cpp
+	<iostream>
+	"IStruct.h"
+	"IDraw.h"
+	"IPlaygame.h"
+
+1524043904 source:c:\users\huypv12\desktop\trang_domin\draw.cpp
+	<iostream>
+	<Windows.h>
+	<conio.h>
+	<time.h>
+	"IDraw.h"
+	"IStruct.h"
+
+1524043901 c:\users\huypv12\desktop\trang_domin\idraw.h
+
+1524043896 c:\users\huypv12\desktop\trang_domin\istruct.h
+	<windows.h>
+	<vector>
+
+1524043900 source:c:\users\huypv12\desktop\trang_domin\menu.cpp
+	"IMenu.h"
+	<iostream>
+	<Windows.h>
+
+1524043894 c:\users\huypv12\desktop\trang_domin\imenu.h
+
+1524043884 source:c:\users\huypv12\desktop\trang_domin\playgame.cpp
+	<iostream>
+	"IStruct.h"
+	"IDraw.h"
+	"IPlaygame.h"
+
+1524043892 c:\users\huypv12\desktop\trang_domin\iplaygame.h
+
+1524043886 source:c:\users\huypv12\desktop\trang_domin\struct.cpp
+	"IStruct.h"
+	<iostream>
+
+1524043897 source:c:\users\huypv12\desktop\trang_domin\main.cpp
+	<iostream>
+	<Windows.h>
+	<conio.h>
+	<time.h>
+	"IStruct.h"
+	"IDraw.h"
+	"IMenu.h"
+	"IPlaygame.h"
+
